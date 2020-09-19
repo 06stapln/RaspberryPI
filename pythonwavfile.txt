@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+# Import simpleaudio sound module
+import time
+import simpleaudio as sa
+import random
+lastint = 0
+while True:
+    randtime = random.randint(10,30)
+    value = random.randint(3,10)
+    print (value)
+    
+    print (randtime)
+    print ("seconds")
+    if value == (lastint):
+        wavFile = "1sec.wav"
+    if value == (1):
+        wavFile = "noise1.wav"
+        
+    if value == (2):
+        wavFile = "percent.wav"
+    if value == (3):
+        
+        wavFile = "analyziscomplete A.i..wav"
+    if value == (4):
+        
+        wavFile = "voiceprint(1).wav"
+    if value == (5):
+        
+        wavFile = "bufferlongA.i..wav"
+    if value == (6):
+        
+        wavFile = "errorlogs A.i..wav"
+    if value == (7):
+        
+        wavFile = "Wall E .wav"
+    if value == (8):
+        
+        wavFile = "laughter.wav"
+    if value == (9):
+        
+        wavFile = "mostimportan.wav"
+    if value == (10):
+        
+        wavFile = "Portal - 'Still Alive'.wav"
+    lastint = (value)
+    
+    time.sleep(randtime)
+# Play the sound if the wav file exists
+    try:
+    # Define object to play
+        print(wavFile)
+        w_object = sa.WaveObject.from_wave_file(wavFile)
+    # Define object to control the play
+        p_object = w_object.play()
+        
+        
+
+# Print error message if the file does not exist
+    except FileNotFoundError:
+        print("Wav File does not exists")
